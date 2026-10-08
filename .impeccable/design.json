@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T12:00:00Z",
+  "title": "Design System: Riccardo Santarossa Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "sand": { "role": "neutral", "displayName": "Sand" },
+      "charcoal": { "role": "neutral", "displayName": "Charcoal" },
+      "rust": { "role": "primary", "displayName": "Rust" }
+    },
+    "shadows": [
+      { "name": "preview", "value": "0 24px 60px -28px rgb(54 69 79 / 0.45)", "purpose": "Lifts the work preview off the ground." },
+      { "name": "sheet-edge", "value": "0 -12px 40px -24px rgb(54 69 79 / 0.35)", "purpose": "Shows that route sheets overlap." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "CSS state transitions (links, toggle)." },
+      { "name": "mode-morph", "value": "gsap expo.out 0.95s", "purpose": "Pro/Weird variable tween." },
+      { "name": "lenis", "value": "lerp 0.1", "purpose": "Smooth wheel scroll; off under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "760px" },
+      { "name": "work-preview", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Mode Toggle",
+      "kind": "custom",
+      "refersTo": "toggle-active",
+      "description": "Pro/Weird switch; the active half is filled with ink.",
+      "html": "<div class=\"ds-toggle\"><button aria-pressed=\"true\">Pro</button><button aria-pressed=\"false\">Weird</button></div>",
+      "css": ".ds-toggle{display:inline-flex;padding:3px;border:1px solid rgb(54 69 79 / .24);border-radius:999px;font-family:Geist,system-ui,sans-serif}.ds-toggle button{font:inherit;font-size:.875rem;font-weight:500;color:#36454f;background:transparent;border:0;border-radius:999px;min-height:44px;padding:0 .95rem;cursor:pointer}.ds-toggle button[aria-pressed=true]{background:#36454f;color:#efe7d6}.ds-toggle button:focus-visible{outline:2px solid #c0532e;outline-offset:4px}"
+    },
+    {
+      "name": "Primary Link",
+      "kind": "button",
+      "description": "The one call to action: underlined in rust.",
+      "html": "<a class=\"ds-cta\" href=\"#\">Work</a>",
+      "css": ".ds-cta{font-family:Geist,system-ui,sans-serif;font-weight:600;font-size:1.25rem;color:#36454f;text-decoration:underline;text-decoration-color:#c0532e;text-decoration-thickness:3px;text-underline-offset:.3em;transition:text-underline-offset .35s cubic-bezier(.16,1,.3,1)}.ds-cta:hover{text-underline-offset:.45em}.ds-cta:focus-visible{outline:2px solid #c0532e;outline-offset:4px}"
+    },
+    {
+      "name": "Work Preview",
+      "kind": "card",
+      "refersTo": "preview-panel-weird",
+      "description": "Sticky preview of the active project (Weird mode shown).",
+      "html": "<div class=\"ds-preview\"><span class=\"ds-n\">1</span><span class=\"ds-t\">Identity project</span></div>",
+      "css": ".ds-preview{display:grid;align-content:space-between;aspect-ratio:4/5;width:260px;padding:1.5rem;background:#c0532e;color:#efe7d6;border-radius:4px;box-shadow:0 24px 60px -28px rgb(54 69 79 / .45);font-family:Fraunces,Georgia,serif}.ds-n{font-size:6rem;line-height:.8;font-weight:300}.ds-t{font-size:2rem;line-height:1;font-weight:820}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Two hands, one typeface",
+    "keyCharacteristics": [
+      "Three identity colours, exact in both modes; everything else is a tint or shade of them.",
+      "Fraunces carries identity; Geist carries information and UI.",
+      "Motion is scroll-driven and single-purpose per section; reduced motion gets the complete page without it."
+    ],
+    "rules": [
+      { "name": "The Three-Colour Rule", "body": "New colours enter only as tints or shades of sand, charcoal and rust.", "section": "colors" },
+      { "name": "The Rust Is Not Text Rule", "body": "Rust appears as lines, fields and focus, never as body or label text.", "section": "colors" },
+      { "name": "The Axis Rule", "body": "Display text never hard-codes SOFT, WONK or weight: it reads --soft, --wonk, --wght-d so the mode can morph it.", "section": "typography" }
+    ]
+  }
+}

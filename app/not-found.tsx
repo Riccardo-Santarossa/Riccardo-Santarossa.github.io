@@ -3,7 +3,7 @@ import { Bar } from '@/components/Bar';
 export default function NotFound() {
   return (
     <>
-      <Bar />
+      <Bar base="/" />
       <main className="lost">
         <h1 className="display lost-h">Not here.</h1>
         <p>This page does not exist.</p>
