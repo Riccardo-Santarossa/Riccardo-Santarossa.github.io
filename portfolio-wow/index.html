@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><!--slot:title--></title>
+    <meta name="description" content="<!--slot:description-->" />
+    <meta name="theme-color" content="#D3D7D0" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D3D7D0'/%3E%3Ccircle cx='20' cy='12' r='5' fill='%23FF9A1A'/%3E%3C/svg%3E" />
+    <script>
+      // Motion is opt-in: no JS or reduced motion = the static, composed version.
+      (function () {
+        var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!rm) document.documentElement.classList.add('motion');
+      })();
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#contact">Skip to contact</a>
+
+    <canvas class="fog" aria-hidden="true"></canvas>
+    <canvas class="dots" aria-hidden="true"></canvas>
+    <span class="cursor" aria-hidden="true"></span>
+
+    <header class="bar">
+      <a class="bar-mark" href="#top" aria-label="Back to top">R<span>S</span></a>
+      <nav class="bar-nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <nav class="rail" aria-label="Route through the page">
+      <ol>
+        <li><a href="#top"><span>Name</span></a></li>
+        <li><a href="#rows"><span>Rows</span></a></li>
+        <li><a href="#turn"><span>Turn</span></a></li>
+        <li><a href="#craft"><span>Now</span></a></li>
+        <li><a href="#work"><span>Work</span></a></li>
+        <li><a href="#route"><span>Route</span></a></li>
+        <li><a href="#contact"><span>Hello</span></a></li>
+      </ol>
+      <span class="rail-dot" aria-hidden="true"></span>
+    </nav>
+
+    <main>
+      <section id="top" class="scene s-hero" aria-label="Introduction">
+        <div class="pin"><!--slot:hero--></div>
+      </section>
+
+      <section id="rows" class="scene s-rows" aria-labelledby="rows-h">
+        <div class="pin"><!--slot:rows--></div>
+      </section>
+
+      <section id="turn" class="scene s-turn" aria-label="The turn">
+        <div class="pin"><!--slot:turn--></div>
+      </section>
+
+      <section id="craft" class="scene s-craft">
+        <div class="pin"><!--slot:craft--></div>
+      </section>
+
+      <section id="work" class="scene s-work">
+        <div class="pin"><!--slot:work--></div>
+      </section>
+
+      <section id="route" class="scene s-route">
+        <!--slot:route-->
+      </section>
+
+      <section id="contact" class="scene s-contact">
+        <div class="pin"><!--slot:contact--></div>
+      </section>
+    </main>
+
+    <footer class="foot"><p><!--slot:footer--></p></footer>
+  </body>
+</html>

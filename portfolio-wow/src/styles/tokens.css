@@ -1,0 +1,45 @@
+/* Design tokens — the single contract every scene reads from.
+   JS reads the colours from here too (see src/core/tokens.js). */
+:root {
+  /* grounds (the fog evolves through these) */
+  --nebbia: #d3d7d0;
+  --peltro: #aeb3ac;
+  --naviglio: #1f2a28;
+  --schiarita: #e3e8e8;
+  /* inks */
+  --inchiostro: #17201e;
+  --calce: #e9ece6;
+  /* accents: small, punctual */
+  --sodio: #ff9a1a;
+  --cobalto: #2b3bff;
+
+  /* sheet tones for the route scene (fog lifting) */
+  --sheet-1: #bfc4bd;
+  --sheet-2: #cdd2cc;
+  --sheet-3: #dce1df;
+
+  /* type */
+  --f-display: 'Anybody Variable', 'Arial Narrow', sans-serif;
+  --f-text: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: clamp(1.125rem, 1rem + 0.45vw, 1.375rem);
+  --step-2: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem);
+  --step-3: clamp(1.8rem, 1.3rem + 1.8vw, 2.7rem);
+  --step-4: clamp(2.5rem, 1.5rem + 4vw, 5.25rem);
+
+  /* motion */
+  --ease-settle: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drift: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 0.35s;
+  --t-med: 0.8s;
+  --t-slow: 1.6s;
+
+  /* space */
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+
+  /* contextual */
+  --ink: var(--inchiostro);
+  --focus: var(--cobalto);
+  --chrome: var(--inchiostro);
+}
